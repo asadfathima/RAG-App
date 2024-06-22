@@ -1,0 +1,8 @@
+flask
+openai
+jwt
+pandas
+qdrant-client
+langchain-openai
+cohere
+python-dotenv

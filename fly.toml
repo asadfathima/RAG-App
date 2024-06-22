@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for cohort2 on 2024-06-19T03:10:44-04:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'cohort2'
+primary_region = 'ord'
+
+[build]
+  builder = 'paketobuildpacks/builder:base'
+
+[env]
+  PORT = '8080'
+  OPENAI_API_KEY = "YOUR_API_KEY"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
